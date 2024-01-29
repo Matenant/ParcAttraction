@@ -1,0 +1,30 @@
+Page administrateur pour ajouter, modifier et supprimer des attractions
+
+<button mat-button (click)="addAttraction()">Ajout</button>
+<ng-container *ngIf="attractions | async">
+    <ng-container *ngFor="let formulaireAttraction of formulaireAttractions; let indexForm = index;"
+        [formGroup]="formulaireAttraction"
+        style="display: flex; flex-direction: column;"
+    >
+        <div style="margin-top: 20px;">
+            <mat-form-field>
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="nom">
+            </mat-form-field>
+        
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <input matInput formControlName="description">
+            </mat-form-field>
+    
+            <mat-form-field appearance="fill">
+                <mat-label>Difficulté / 10</mat-label>
+                <input matInput formControlName="difficulte" type="number">
+            </mat-form-field>
+
+            <mat-slide-toggle formControlName="visible">Element visible</mat-slide-toggle>
+
+            <button mat-button (click)="onSubmit(formulaireAttraction)">Enregistrer</button>
+        </div>
+    </ng-container>
+</ng-container>

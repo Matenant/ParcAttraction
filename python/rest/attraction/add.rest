@@ -1,0 +1,12 @@
+POST http://127.0.0.1:5000/attraction HTTP/1.1
+Content-Type: application/json
+Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDYzOTQ3OTYsImlhdCI6MTcwNjMwODM5Niwic3ViIjoxfQ.aLTZKPZE0cYRW1lCTMg9lglDxdO0NHEAmD1RFkCL7Hk
+
+{
+  "attraction_id": 1,
+  "nom": "test6aaaaaaaaaaaaaaaaaaaaa",
+  "description": "test",
+  "difficulte": 4,
+  "visible": false
+}
+

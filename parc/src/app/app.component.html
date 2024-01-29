@@ -1,0 +1,5 @@
+<a routerLink="/accueil"></a>
+<div *ngIf="authService.isLoggedIn">
+  <span (click)="logout()">Déconnexion</span>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,34 @@
+version: '3'
+services:
+
+  web:
+    volumes:
+      - ./parc:/var/www/html/parc
+    command: /bin/sh -c "copy.sh"
+    build: ./parc
+    ports:
+      - 4200:4200
+    hostname: "parc.loc"
+
+  api:
+    volumes:
+      - ./python:/var/www/html/api
+    build: ./python
+    ports:
+      - 5000:5000
+    links:
+      - database:mysql
+
+  # database container - actency images
+  database:
+    # @see https://github.com/Actency/docker-mysql
+    image: mariadb:latest
+    volumes:
+      - /python:/var/www/html/api
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysqlroot
+      - MYSQL_DATABASE=parc
+      - MYSQL_USER=mysqlusr
+      - MYSQL_PASSWORD=mysqlpwd
