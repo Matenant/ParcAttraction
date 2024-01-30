@@ -21,3 +21,13 @@ Notation :
 Quelques pistes sur quoi commencer :
 - Faire le bilan de l'existant
 - Établir un début de schéma BDD
+
+Mise en place du projet :
+- Git clone le projet
+- Faire une nouvelle branche avec comme nom : <NOM>-<PRENOM>
+- Build le docker compose
+- Lancer le docker compose
+- Aller dans le container python
+  - docker exec -it cours-api-1 sh
+  - Lancer les scripts python dans l'ordre : init.py puis create.py
+- Le projet est lancé
