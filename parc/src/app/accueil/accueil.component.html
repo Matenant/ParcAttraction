@@ -1,5 +1,21 @@
-Bienvenue sur le site internet du parc d'attraction
-
-<ng-container *ngFor="let attraction of attractions | async;">
-    {{attraction.nom}}
-</ng-container>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Bienvenue sur le site internet du parc d'attraction</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="attraction-title">
+      <div class="attraction">
+        <span>Nom de l'attraction</span>
+        <span>Description de l'attraction</span>
+        <span>Difficulté de l'attraction / 5</span>
+      </div>
+    </div>
+    <ng-container *ngFor="let attraction of attractions | async;">
+      <div class="attraction">
+        <span>{{attraction.nom}}</span>
+        <span>{{attraction.description}}</span>
+        <span>{{attraction.difficulte}} / 5</span>
+      </div>
+    </ng-container>
+  </mat-card-content>
+</mat-card>

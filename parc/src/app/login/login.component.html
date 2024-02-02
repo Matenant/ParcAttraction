@@ -1,13 +1,18 @@
-<h1>Login</h1>
-
-<form [formGroup]="form" (ngSubmit)="login()">
-  <div>
-    <input type="text" placeholder="Nom" formControlName="name" />
-  </div>
-  <div>
-    <input type="password" placeholder="Mot de passe" formControlName="password" />
-  </div>
-  <div>
-    <button type="submit">Sign In</button>
-  </div>
-</form>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Connexion à la page administrateur</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="login()" class="formulaire">
+      <mat-form-field appearance="fill">
+        <mat-label>Nom</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Mot de passe</mat-label>
+        <input matInput formControlName="password">
+      </mat-form-field>
+      <button mat-stroked-button type="submit">Connexion</button>
+    </form>
+  </mat-card-content>
+</mat-card>
