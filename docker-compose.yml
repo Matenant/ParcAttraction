@@ -16,19 +16,19 @@ services:
     build: ./python
     ports:
       - 5000:5000
-    links:
-      - database:mysql
+    # links:
+    #   - database:mysql
 
   # database container - actency images
-  database:
-    # @see https://github.com/Actency/docker-mysql
-    image: mariadb:latest
-    volumes:
-      - /python:/var/www/html/api
-    ports:
-      - 3306:3306
-    environment:
-      - MYSQL_ROOT_PASSWORD=mysqlroot
-      - MYSQL_DATABASE=parc
-      - MYSQL_USER=mysqlusr
-      - MYSQL_PASSWORD=mysqlpwd
+  # database:
+  #   # @see https://github.com/Actency/docker-mysql
+  #   image: mariadb:latest
+  #   volumes:
+  #     - /python:/var/www/html/api
+  #   ports:
+  #     - 3306:3306
+  #   environment:
+  #     - MYSQL_ROOT_PASSWORD=mysqlroot
+  #     - MYSQL_DATABASE=parc
+  #     - MYSQL_USER=mysqlusr
+  #     - MYSQL_PASSWORD=mysqlpwd

@@ -1,15 +1,10 @@
-import mariadb
+import sqlite3
 import sys
 import re
 
 try:
-    conn = mariadb.connect(
-        user="mysqlusr",
-        password="mysqlpwd",
-        host="database",
-        port=3306,
-        database="parc"
-    )
+    import sqlite3
+    conn = sqlite3.connect("parc.db")
     cur = conn.cursor()
     #code ici
 
@@ -33,6 +28,6 @@ try:
     conn.commit()
     conn.close()
 
-except mariadb.Error as e:
+except sqlite3.Error as e:
     print(f"Erreur lors de la connection à la base de données: {e}")
     sys.exit(1)

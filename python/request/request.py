@@ -1,14 +1,8 @@
-import mariadb
+import sqlite3
 import datetime
 
 def get_db_connection():
-    conn = mariadb.connect(
-        user="mysqlusr",
-        password="mysqlpwd",
-        host="database",
-        port=3306,
-        database="parc"
-    )
+    conn = sqlite3.connect("parc.db")
     cur = conn.cursor()
     return cur, conn
 
