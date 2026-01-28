@@ -1,9 +1,14 @@
 FROM python:3.10
 
-WORKDIR /var/www/html/api
+ENV FLASK_APP=app:app
 
-COPY . .
+WORKDIR /var/www/html/back
+
+COPY --link . ./
 
 RUN pip3 install -r requirements.txt
 
-CMD [ "python3", "-m" , "flask", "--debug", "run", "--host=0.0.0.0"]
+COPY --link --chmod=755 docker-entrypoint.sh /usr/local/bin/docker-entrypoint
+
+# CMD [ "python3", "-m" , "flask", "--debug", "run", "--host=0.0.0.0"]
+ENTRYPOINT [ "docker-entrypoint"]
