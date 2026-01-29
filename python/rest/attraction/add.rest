@@ -1,4 +1,4 @@
-POST http://127.0.0.1:5000/attraction HTTP/1.1
+POST https://api/attraction HTTP/1.1
 Content-Type: application/json
 Authorization: Token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDYzOTQ3OTYsImlhdCI6MTcwNjMwODM5Niwic3ViIjoxfQ.aLTZKPZE0cYRW1lCTMg9lglDxdO0NHEAmD1RFkCL7Hk
 

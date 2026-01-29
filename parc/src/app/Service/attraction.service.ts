@@ -20,7 +20,7 @@ export class AttractionService {
   }
 
   public postAttraction(attraction: AttractionInterface): Observable<MessageInterface> {
-    const url = "http://127.0.0.1:5000/attraction";
+    const url = "https://api/attraction";
     const data = this.dataService.postData(url, attraction);
     return data as Observable<MessageInterface>;
   }
